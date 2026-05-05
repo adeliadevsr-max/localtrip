@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-sage: #849C7D;
+  --color-sage-dark: #2D3A29;
+  --color-sage-light: #C0CFB2;
+  --color-cream: #FDFBF7;
+  --color-cream-dark: #F7F4EF;
+  --color-sun: #FFD43B;
+  --color-sun-dark: #F59F00;
+  --color-charcoal: #121211;
+  --color-charcoal-light: #52524D;
+  --color-warm-white: #FFFFFF;
+  --color-coral: #E68D74;
+  --color-gold: #D4AF37;
+  --color-ink: #0A0A0A;
+
+  --radius-2xl: 20px;
+  --radius-3xl: 40px;
+  --radius-pill: 9999px;
+
+  --shadow-minimal: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.02);
+  --shadow-refined: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-coastal: 0 4px 20px rgba(92, 113, 86, 0.06);
+  --shadow-sun: 0 8px 30px rgba(255, 212, 59, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-warm-white text-charcoal font-sans antialiased selection:bg-sun/30;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    @apply font-serif tracking-tight leading-[1.1];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-[11px] uppercase tracking-[0.15em] transition-all duration-500 cursor-pointer active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-sage-dark shadow-minimal hover:shadow-refined;
+  }
+  
+  .btn-sage {
+    @apply bg-sage-dark text-warm-white hover:bg-sage;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-charcoal hover:bg-cream-dark border border-charcoal/5;
+  }
+
+  .card {
+    @apply bg-white rounded-[32px] p-8 border border-charcoal/[0.03] shadow-minimal hover:shadow-refined transition-all duration-700;
+  }
+
+  .badge {
+    @apply px-4 py-1.5 rounded-full text-[9px] font-black tracking-[0.2em] uppercase;
+  }
+}
